@@ -1,0 +1,1 @@
+insert into EMPLOYEE(NAME,GENDER,DATE_OF_BIRTH,DEPARTMENT) VALUES('Rahul Raj','Male','1986-05-14','Technology');
