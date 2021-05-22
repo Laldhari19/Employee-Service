@@ -29,8 +29,8 @@ public class EmployeeControllerTest {
 
     @Test
     public void createEmployeeTest(){
-        EmployeeDTO employeeDTO= EmployeeDTO.builder().dateOfBirth(new Date()).department("Tech").firstName("Tom")
-                .lastName("Mishra").gender("Male").build();
+        EmployeeDTO employeeDTO= EmployeeDTO.builder().dateOfBirth(new Date()).department("Tech").firstName("Rahul")
+                .lastName("Raj").gender("Male").build();
         employeeController.createEmployee(employeeDTO);
         Mockito.verify(employeeService).createNewEmployee(employeeArgumentCaptor.capture());
         Assert.assertEquals(employeeDTO,employeeArgumentCaptor.getValue());
@@ -38,8 +38,8 @@ public class EmployeeControllerTest {
 
     @Test
     public void getAllEmployeeTest(){
-        List<Employee> employees= Arrays.asList(Employee.builder().name("Tom Harry").department("Manager").
-                dateOfBirth(new Date()).gender("Female").build());
+        List<Employee> employees= Arrays.asList(Employee.builder().name("Rahul Raj").department("Manager").
+                dateOfBirth(new Date()).gender("Male").build());
         when(employeeService.getExistingEmployee()).thenReturn(employees);
         List<Employee> response=employeeController.getAllEmployee();
         Assert.assertEquals(employees,response);

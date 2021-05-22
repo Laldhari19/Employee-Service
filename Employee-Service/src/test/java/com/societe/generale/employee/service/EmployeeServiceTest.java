@@ -49,8 +49,8 @@ public class EmployeeServiceTest {
 
     @Test
     public void getExistingEmployeeTest(){
-        List<Employee> employees= Arrays.asList(Employee.builder().name("Tom Harry").department("Manager").
-                dateOfBirth(new Date()).gender("Female").build());
+        List<Employee> employees= Arrays.asList(Employee.builder().name("Rahul Raj").department("Manager").
+                dateOfBirth(new Date()).gender("Male").build());
         when(employeeRepository.findAllByOrderByNameAsc()).thenReturn(employees);
         List<Employee> response=employeeService.getExistingEmployee();
         Assert.assertEquals(employees,response);
